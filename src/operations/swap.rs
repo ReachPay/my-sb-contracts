@@ -9,13 +9,13 @@ pub struct SwapOperation {
     #[prost(string, tag = "3")]
     pub client_id: String,
     #[prost(string, tag = "4")]
-    pub from_wallet: String,
+    pub sell_asset: String,
     #[prost(double, tag = "5")]
-    pub from_amount: f64,
+    pub sell_amount: f64,
     #[prost(string, tag = "6")]
-    pub to_wallet: String,
+    pub buy_asset: String,
     #[prost(double, tag = "7")]
-    pub to_amount: f64,
+    pub buy_amount: f64,
     #[prost(message, repeated, tag = "8")]
     pub bid_asks: Vec<BidAskProtobufModel>,
 }
