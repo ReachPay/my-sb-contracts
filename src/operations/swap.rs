@@ -1,3 +1,5 @@
+use crate::BidAskProtobufModel;
+
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct SwapOperation {
     #[prost(sint64, tag = "1")]
@@ -14,6 +16,8 @@ pub struct SwapOperation {
     pub to_wallet: String,
     #[prost(double, tag = "7")]
     pub to_amount: f64,
+    #[prost(message, repeated, tag = "8")]
+    pub bid_asks: Vec<BidAskProtobufModel>,
 }
 
 impl SwapOperation {
