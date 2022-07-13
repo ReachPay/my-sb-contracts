@@ -15,3 +15,15 @@ pub struct SwapOperation {
     #[prost(double, tag = "7")]
     pub to_amount: f64,
 }
+
+impl SwapOperation {
+    pub fn as_protobuf_bytes(&self) -> Result<Vec<u8>, prost::EncodeError> {
+        let mut result = Vec::new();
+        prost::Message::encode(self, &mut result)?;
+        Ok(result)
+    }
+
+    pub fn from_protobuf_bytes(bytes: &[u8]) -> Result<Self, prost::DecodeError> {
+        prost::Message::decode(bytes)
+    }
+}
