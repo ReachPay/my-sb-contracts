@@ -12,11 +12,15 @@ pub struct SwapOperation {
     pub sell_asset: String,
     #[prost(double, tag = "5")]
     pub sell_amount: f64,
-    #[prost(string, tag = "6")]
+    #[prost(double, tag = "6")]
+    pub sell_asset_balance: f64,
+    #[prost(string, tag = "7")]
     pub buy_asset: String,
-    #[prost(double, tag = "7")]
+    #[prost(double, tag = "8")]
     pub buy_amount: f64,
-    #[prost(message, repeated, tag = "8")]
+    #[prost(double, tag = "9")]
+    pub buy_asset_balance: f64,
+    #[prost(message, repeated, tag = "10")]
     pub bid_asks: Vec<BidAskProtobufModel>,
 }
 
