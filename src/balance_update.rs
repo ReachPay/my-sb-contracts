@@ -1,5 +1,7 @@
 use crate::utils::AsBytes;
 
+pub static BALANCE_UPDATE_TOPIC_NAME: &'static str = "balance-update";
+
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct BalanceUpdateProtobufModel {
     #[prost(string, tag = "1")]
