@@ -1,5 +1,5 @@
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct BalanceUpdateModel {
+pub struct BalanceUpdateMySbModel {
     #[prost(string, tag = "1")]
     pub process_id: String,
     #[prost(sint64, tag = "2")]
