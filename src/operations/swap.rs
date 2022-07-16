@@ -1,5 +1,7 @@
 use crate::{utils::AsBytes, BidAskProtobufModel};
 
+pub static SWAP_TOPIC_NAME: &'static str = "swap-operation";
+
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct SwapOperation {
     #[prost(sint64, tag = "1")]
