@@ -1,4 +1,4 @@
-use crate::BidAskProtobufModel;
+use crate::{utils::AsBytes, BidAskProtobufModel};
 
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct SwapOperation {
@@ -33,5 +33,11 @@ impl SwapOperation {
 
     pub fn from_protobuf_bytes(bytes: &[u8]) -> Result<Self, prost::DecodeError> {
         prost::Message::decode(bytes)
+    }
+}
+
+impl AsBytes for SwapOperation {
+    fn as_bytes(&self) -> Vec<u8> {
+        self.as_protobuf_bytes().unwrap()
     }
 }

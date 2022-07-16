@@ -1,3 +1,5 @@
+use crate::utils::AsBytes;
+
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct BidAskProtobufModel {
     #[prost(string, tag = "1")]
@@ -23,5 +25,11 @@ impl BidAskProtobufModel {
 
     pub fn from_protobuf_bytes(bytes: &[u8]) -> Result<Self, prost::DecodeError> {
         prost::Message::decode(bytes)
+    }
+}
+
+impl AsBytes for BidAskProtobufModel {
+    fn as_bytes(&self) -> Vec<u8> {
+        self.as_protobuf_bytes().unwrap()
     }
 }

@@ -1,5 +1,7 @@
+use crate::utils::AsBytes;
+
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct BalanceUpdateMySbModel {
+pub struct BalanceUpdateMyProtobufModel {
     #[prost(string, tag = "1")]
     pub process_id: String,
     #[prost(sint64, tag = "2")]
@@ -18,7 +20,7 @@ pub struct BalanceUpdate {
     pub balance: f64,
 }
 
-impl BalanceUpdateMySbModel {
+impl BalanceUpdateMyProtobufModel {
     pub fn as_protobuf_bytes(&self) -> Result<Vec<u8>, prost::EncodeError> {
         let mut result = Vec::new();
         prost::Message::encode(self, &mut result)?;
@@ -27,5 +29,11 @@ impl BalanceUpdateMySbModel {
 
     pub fn from_protobuf_bytes(bytes: &[u8]) -> Result<Self, prost::DecodeError> {
         prost::Message::decode(bytes)
+    }
+}
+
+impl AsBytes for BalanceUpdateMyProtobufModel {
+    fn as_bytes(&self) -> Vec<u8> {
+        self.as_protobuf_bytes().unwrap()
     }
 }
