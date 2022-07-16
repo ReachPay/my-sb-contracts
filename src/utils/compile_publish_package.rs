@@ -8,8 +8,8 @@ pub trait AsBytes {
 }
 
 pub fn compile_publish_package<TPackage: AsBytes + Send + Sync + 'static>(
-    package: TPackage,
-    ctx: MyTelemetryContext,
+    package: &TPackage,
+    ctx: &MyTelemetryContext,
 ) -> MessageToPublish {
     let mut headers = HashMap::new();
     headers.insert("process-id".to_string(), ctx.process_id.to_string());
