@@ -8,7 +8,8 @@ edition = "2021"
 [dependencies]
 my-telemetry = { branch = "0.2.0", git = "https://github.com/MyJetTools/my-telemetry.git" }
 my-service-bus-shared = { branch = "0.2.2", git = "https://github.com/MyJetTools/my-service-bus-shared.git" }
-my-service-bus-tcp-client = { branch = "0.1.3", git = "https://github.com/MyJetTools/my-service-bus-tcp-client.git" }
+my-service-bus-tcp-client = { branch = "0.1.4", git = "https://github.com/MyJetTools/my-service-bus-tcp-client.git" }
+rust-extensions = { branch = "0.1.0", git = "https://github.com/MyJetTools/rust-extensions.git" }
 
 prost = "*"
 prost-types = "*"

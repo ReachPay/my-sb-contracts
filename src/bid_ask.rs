@@ -32,4 +32,8 @@ impl AsBytes for BidAskProtobufModel {
     fn as_bytes(&self) -> Vec<u8> {
         self.as_protobuf_bytes().unwrap()
     }
+
+    fn from_bytes(src: &[u8]) -> Self {
+        Self::from_protobuf_bytes(src).unwrap()
+    }
 }
