@@ -1,9 +1,9 @@
 use crate::utils::AsBytes;
 
-pub static CRYPTO_DEPOSIT_TOPIC_NAME: &'static str = "crypto-deposit";
+pub static CRYPTO_DEPOSIT_COMMAND_TOPIC_NAME: &'static str = "crypto-deposit-command";
 
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct CryptoDepositOperation {
+pub struct CryptoDepositCommand {
     #[prost(sint64, tag = "1")]
     pub created: i64,
     #[prost(string, tag = "2")]
@@ -22,7 +22,7 @@ pub struct CryptoDepositOperation {
     pub transaction_id: String,
 }
 
-impl CryptoDepositOperation {
+impl CryptoDepositCommand {
     pub fn as_protobuf_bytes(&self) -> Result<Vec<u8>, prost::EncodeError> {
         let mut result = Vec::new();
         prost::Message::encode(self, &mut result)?;
@@ -34,7 +34,7 @@ impl CryptoDepositOperation {
     }
 }
 
-impl AsBytes for CryptoDepositOperation {
+impl AsBytes for CryptoDepositCommand {
     fn as_bytes(&self) -> Vec<u8> {
         self.as_protobuf_bytes().unwrap()
     }
