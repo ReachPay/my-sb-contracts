@@ -18,6 +18,8 @@ pub struct CryptoDepositOperation {
     pub from_address: String,
     #[prost(string, tag = "7")]
     pub deposit_address: String,
+    #[prost(string, tag = "8")]
+    pub transaction_id: String,
 }
 
 impl CryptoDepositOperation {
