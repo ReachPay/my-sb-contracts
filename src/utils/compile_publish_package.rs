@@ -5,7 +5,6 @@ use my_telemetry::MyTelemetryContext;
 
 pub trait AsBytes {
     fn as_bytes(&self) -> Vec<u8>;
-    fn from_bytes(src: &[u8]) -> Self;
 }
 
 pub fn compile_publish_package<TPackage: AsBytes + Send + Sync + 'static>(
