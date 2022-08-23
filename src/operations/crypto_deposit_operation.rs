@@ -2,26 +2,31 @@ use crate::utils::AsBytes;
 
 pub static CRYPTO_DEPOSIT_OPERATION_TOPIC_NAME: &'static str = "crypto-deposit-operation";
 
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct CryptoDepositOperation {
-    #[prost(sint64, tag = "1")]
-    pub created: i64,
+#[derive(Clone, Debug, ::prost::Enumeration)]
+#[repr(i32)]
+pub enum CryptoDepositStatus {
+    Initialized = 0,
+    Completed = 1,
+}
+
+#[derive(PartialEq, ::prost::Message)]
+pub struct CryptoDepositEvent {
+    #[prost(string, tag = "1")]
+    pub source_transaction_id: String,
     #[prost(string, tag = "2")]
-    pub process_id: String,
-    #[prost(string, tag = "3")]
-    pub client_id: String,
-    #[prost(string, tag = "4")]
-    pub asset_id: String,
-    #[prost(double, tag = "5")]
+    pub wallet_id: String,
+    #[prost(double, tag = "3")]
     pub amount: f64,
+    #[prost(uint64, tag = "4")]
+    pub external_datetime: u64,
+    #[prost(uint64, tag = "5")]
+    pub internal_datetime: u64,
     #[prost(double, tag = "6")]
-    pub balance_after_operation: f64,
-    #[prost(string, tag = "7")]
-    pub from_address: String,
+    pub usd_amount: f64,
+    #[prost(enumeration = "CryptoDepositStatus", tag = "7")]
+    pub status: i32,
     #[prost(string, tag = "8")]
-    pub deposit_address: String,
-    #[prost(string, tag = "9")]
-    pub transaction_id: String,
+    pub transaction_hash: String,
 }
 
 impl CryptoDepositOperation {
