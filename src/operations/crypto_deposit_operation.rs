@@ -4,13 +4,13 @@ pub static CRYPTO_DEPOSIT_OPERATION_TOPIC_NAME: &'static str = "crypto-deposit-o
 
 #[derive(Clone, Debug, ::prost::Enumeration)]
 #[repr(i32)]
-pub enum CryptoDepositStatus {
+pub enum CryptoDepositOperationStatus {
     Initialized = 0,
     Completed = 1,
 }
 
 #[derive(PartialEq, ::prost::Message)]
-pub struct CryptoDepositEvent {
+pub struct CryptoDepositOperation {
     #[prost(string, tag = "1")]
     pub source_transaction_id: String,
     #[prost(string, tag = "2")]
@@ -23,7 +23,7 @@ pub struct CryptoDepositEvent {
     pub internal_datetime: u64,
     #[prost(double, tag = "6")]
     pub usd_amount: f64,
-    #[prost(enumeration = "CryptoDepositStatus", tag = "7")]
+    #[prost(enumeration = "CryptoDepositOperationStatus", tag = "7")]
     pub status: i32,
     #[prost(string, tag = "8")]
     pub transaction_hash: String,
