@@ -8,6 +8,7 @@ edition = "2021"
 [features]
 default = []
 crypto-deposit-operation = []
+swap-operation = []
 
 
 [dependencies]
