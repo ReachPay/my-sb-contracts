@@ -1,6 +1,6 @@
 use crate::utils::{AsBytes, FromBytes};
 
-pub static CRYPTO_DEPOSIT_TOPIC_NAME: &'static str = "crypto-deposit";
+pub static CRYPTO_DEPOSIT_OPERATION_TOPIC_NAME: &'static str = "crypto-deposit-operation";
 
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct CryptoDepositOperation {
