@@ -16,6 +16,7 @@ my-telemetry = { branch = "0.2.1", git = "https://github.com/MyJetTools/my-telem
 my-service-bus-shared = { branch = "0.2.3", git = "https://github.com/MyJetTools/my-service-bus-shared.git" }
 my-service-bus-tcp-client = { branch = "0.1.5", git = "https://github.com/MyJetTools/my-service-bus-tcp-client.git" }
 rust-extensions = { branch = "0.1.1", git = "https://github.com/MyJetTools/rust-extensions.git" }
+my-logger = { branch = "0.2.0", git = "https://github.com/MyJetTools/my-logger.git" }
 
 prost = "*"
 prost-types = "*"
