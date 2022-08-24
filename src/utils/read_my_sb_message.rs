@@ -5,7 +5,7 @@ use rust_extensions::date_time::DateTimeAsMicroseconds;
 
 use super::{FromBytes, MY_TELEMETRY_HEADER};
 
-pub fn read_my_sb_message<TMessage: Send + Sync + Default + FromBytes<TMessage>>(
+pub fn read_my_sb_message<TMessage: Send + Sync + Default + FromBytes>(
     msg: &MySbDeliveredMessage,
 ) -> Result<(TMessage, MyTelemetryContext), DecodeError> {
     let result: TMessage = TMessage::from_bytes(msg.content.as_slice());

@@ -1,4 +1,4 @@
-use crate::utils::AsBytes;
+use crate::utils::{AsBytes, FromBytes};
 
 pub static CRYPTO_DEPOSIT_COMMAND_TOPIC_NAME: &'static str = "crypto-deposit-command";
 
@@ -31,20 +31,16 @@ pub struct CryptoDepositCommand {
     pub deposit_address: String,
 }
 
-impl CryptoDepositCommand {
-    pub fn as_protobuf_bytes(&self) -> Result<Vec<u8>, prost::EncodeError> {
+impl AsBytes for CryptoDepositCommand {
+    fn as_bytes(&self) -> Vec<u8> {
         let mut result = Vec::new();
-        prost::Message::encode(self, &mut result)?;
-        Ok(result)
-    }
-
-    pub fn from_protobuf_bytes(bytes: &[u8]) -> Result<Self, prost::DecodeError> {
-        prost::Message::decode(bytes)
+        prost::Message::encode(self, &mut result).unwrap();
+        result
     }
 }
 
-impl AsBytes for CryptoDepositCommand {
-    fn as_bytes(&self) -> Vec<u8> {
-        self.as_protobuf_bytes().unwrap()
+impl FromBytes for CryptoDepositCommand {
+    fn from_bytes(src: &[u8]) -> Self {
+        prost::Message::decode(src).unwrap()
     }
 }
