@@ -1,16 +1,16 @@
 use crate::utils::AsBytes;
 
-pub static CRYPTO_DEPOSIT_OPERATION_TOPIC_NAME: &'static str = "crypto-deposit-operation";
+pub static CRYPTO_DEPOSIT_COMMAND_TOPIC_NAME: &'static str = "crypto-deposit-command";
 
 #[derive(Clone, Debug, ::prost::Enumeration)]
 #[repr(i32)]
-pub enum CryptoDepositOperationStatus {
+pub enum CryptoDepositCommandStatus {
     Initialized = 0,
     Completed = 1,
 }
 
 #[derive(PartialEq, ::prost::Message)]
-pub struct CryptoDepositOperation {
+pub struct CryptoDepositCommand {
     #[prost(string, tag = "1")]
     pub source_transaction_id: String,
     #[prost(string, tag = "2")]
@@ -23,7 +23,7 @@ pub struct CryptoDepositOperation {
     pub internal_datetime: u64,
     #[prost(double, tag = "6")]
     pub usd_amount: f64,
-    #[prost(enumeration = "CryptoDepositOperationStatus", tag = "7")]
+    #[prost(enumeration = "CryptoDepositCommandStatus", tag = "7")]
     pub status: i32,
     #[prost(string, tag = "8")]
     pub transaction_hash: String,
@@ -31,7 +31,7 @@ pub struct CryptoDepositOperation {
     pub deposit_address: String,
 }
 
-impl CryptoDepositOperation {
+impl CryptoDepositCommand {
     pub fn as_protobuf_bytes(&self) -> Result<Vec<u8>, prost::EncodeError> {
         let mut result = Vec::new();
         prost::Message::encode(self, &mut result)?;
@@ -43,7 +43,7 @@ impl CryptoDepositOperation {
     }
 }
 
-impl AsBytes for CryptoDepositOperation {
+impl AsBytes for CryptoDepositCommand {
     fn as_bytes(&self) -> Vec<u8> {
         self.as_protobuf_bytes().unwrap()
     }
