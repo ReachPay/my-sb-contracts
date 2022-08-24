@@ -14,7 +14,7 @@ pub struct CryptoDepositOperation {
     #[prost(string, tag = "1")]
     pub source_transaction_id: String,
     #[prost(string, tag = "2")]
-    pub wallet_id: String,
+    pub asset_id: String,
     #[prost(double, tag = "3")]
     pub amount: f64,
     #[prost(uint64, tag = "4")]
@@ -27,6 +27,8 @@ pub struct CryptoDepositOperation {
     pub status: i32,
     #[prost(string, tag = "8")]
     pub transaction_hash: String,
+    #[prost(string, tag = "9")]
+    pub deposit_address: String,
 }
 
 impl CryptoDepositOperation {
