@@ -17,8 +17,6 @@ pub struct CryptoDepositOperation {
     #[prost(double, tag = "6")]
     pub balance_after_operation: f64,
     #[prost(string, tag = "7")]
-    pub from_address: String,
-    #[prost(string, tag = "8")]
     pub transaction_id: String,
 }
 
