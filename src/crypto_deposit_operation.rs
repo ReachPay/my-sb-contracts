@@ -14,9 +14,11 @@ pub struct CryptoDepositOperation {
     pub asset_id: String,
     #[prost(double, tag = "5")]
     pub amount: f64,
-    #[prost(string, tag = "6")]
-    pub from_address: String,
+    #[prost(double, tag = "6")]
+    pub balance_after_operation: f64,
     #[prost(string, tag = "7")]
+    pub from_address: String,
+    #[prost(string, tag = "8")]
     pub deposit_address: String,
 }
 
