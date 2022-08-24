@@ -8,7 +8,7 @@ use super::{AsBytes, MY_TELEMETRY_HEADER};
 pub async fn publish_to_topic_with_retries<TPayload: AsBytes>(
     sb_client: &MyServiceBusClient,
     topic_id: &str,
-    payload: TPayload,
+    payload: &TPayload,
     my_telemetry: MyTelemetryContext,
 ) -> Result<(), PublishError> {
     loop {
