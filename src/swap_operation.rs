@@ -29,12 +29,6 @@ pub struct SwapOperation {
     pub bid_asks: Vec<BidAskProtobufModel>,
 }
 
-impl SwapOperation {
-    pub fn from_protobuf_bytes(bytes: &[u8]) -> Result<Self, prost::DecodeError> {
-        prost::Message::decode(bytes)
-    }
-}
-
 impl AsBytes for SwapOperation {
     fn as_bytes(&self) -> Vec<u8> {
         let mut result = Vec::new();

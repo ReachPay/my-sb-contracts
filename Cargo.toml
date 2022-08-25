@@ -7,9 +7,12 @@ edition = "2021"
 
 [features]
 default = []
+bid-ask = []
 crypto-deposit-operation = []
 crypto-deposit-command = []
 swap-operation = []
+balance-update = []
+order-execution-operation = []
 
 
 [dependencies]
