@@ -3,7 +3,7 @@ use crate::{
     BidAskProtobufModel,
 };
 
-pub static SWAP_TOPIC_NAME: &'static str = "swap-operation";
+pub static SWAP_OPERATION_TOPIC_NAME: &'static str = "swap-operation";
 
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct SwapOperation {
