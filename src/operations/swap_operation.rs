@@ -1,4 +1,7 @@
-use crate::{utils::AsBytes, BidAskProtobufModel};
+use crate::{
+    utils::{AsBytes, FromBytes},
+    BidAskProtobufModel,
+};
 
 pub static SWAP_TOPIC_NAME: &'static str = "swap-operation";
 
@@ -27,12 +30,6 @@ pub struct SwapOperation {
 }
 
 impl SwapOperation {
-    pub fn as_protobuf_bytes(&self) -> Result<Vec<u8>, prost::EncodeError> {
-        let mut result = Vec::new();
-        prost::Message::encode(self, &mut result)?;
-        Ok(result)
-    }
-
     pub fn from_protobuf_bytes(bytes: &[u8]) -> Result<Self, prost::DecodeError> {
         prost::Message::decode(bytes)
     }
@@ -40,6 +37,14 @@ impl SwapOperation {
 
 impl AsBytes for SwapOperation {
     fn as_bytes(&self) -> Vec<u8> {
-        self.as_protobuf_bytes().unwrap()
+        let mut result = Vec::new();
+        prost::Message::encode(self, &mut result).unwrap();
+        result
+    }
+}
+
+impl FromBytes for SwapOperation {
+    fn from_bytes(src: &[u8]) -> Self {
+        prost::Message::decode(src).unwrap()
     }
 }
