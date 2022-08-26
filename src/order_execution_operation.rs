@@ -6,18 +6,20 @@ pub struct OrderExecutionOperation {
     #[prost(sint64, tag = "1")]
     pub created: i64,
     #[prost(string, tag = "2")]
-    pub order_id: String,
+    pub process_id: String,
     #[prost(string, tag = "3")]
-    pub from_client_id: String,
+    pub order_id: String,
     #[prost(string, tag = "4")]
-    pub to_client_id: String,
+    pub from_client_id: String,
     #[prost(string, tag = "5")]
+    pub to_client_id: String,
+    #[prost(string, tag = "6")]
     pub currency: String,
-    #[prost(double, tag = "6")]
-    pub amount: f64,
     #[prost(double, tag = "7")]
-    pub from_balance_after_operation: f64,
+    pub amount: f64,
     #[prost(double, tag = "8")]
+    pub from_balance_after_operation: f64,
+    #[prost(double, tag = "9")]
     pub to_balance_after_operation: f64,
 }
 
