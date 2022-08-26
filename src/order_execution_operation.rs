@@ -11,11 +11,13 @@ pub struct OrderExecutionOperation {
     pub from_client_id: String,
     #[prost(string, tag = "4")]
     pub to_client_id: String,
-    #[prost(double, tag = "5")]
-    pub amount: f64,
+    #[prost(string, tag = "5")]
+    pub currency: String,
     #[prost(double, tag = "6")]
-    pub from_balance_after_operation: f64,
+    pub amount: f64,
     #[prost(double, tag = "7")]
+    pub from_balance_after_operation: f64,
+    #[prost(double, tag = "8")]
     pub to_balance_after_operation: f64,
 }
 
