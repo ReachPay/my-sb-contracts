@@ -27,3 +27,6 @@ pub use crypto_deposit_operation::*;
 mod swap_operation;
 #[cfg(feature = "swap-operation")]
 pub use swap_operation::*;
+
+mod process_order_command;
+pub use process_order_command::*;
