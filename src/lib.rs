@@ -28,5 +28,7 @@ mod swap_operation;
 #[cfg(feature = "swap-operation")]
 pub use swap_operation::*;
 
+#[cfg(feature = "process-order-command")]
 mod process_order_command;
+#[cfg(feature = "process-order-command")]
 pub use process_order_command::*;
