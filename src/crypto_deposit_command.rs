@@ -29,6 +29,8 @@ pub struct CryptoDepositCommand {
     pub transaction_hash: String,
     #[prost(string, tag = "9")]
     pub deposit_address: String,
+    #[prost(string, tag = "10")]
+    pub from_address: String,
 }
 
 impl AsBytes for CryptoDepositCommand {
