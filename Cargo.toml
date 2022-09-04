@@ -16,11 +16,13 @@ order-execution-operation = []
 process-order-command = []
 
 [dependencies]
-my-telemetry = { branch = "0.2.1", git = "https://github.com/MyJetTools/my-telemetry.git" }
-my-service-bus-shared = { branch = "0.2.3", git = "https://github.com/MyJetTools/my-service-bus-shared.git" }
-my-service-bus-tcp-client = { branch = "0.1.5", git = "https://github.com/MyJetTools/my-service-bus-tcp-client.git" }
-rust-extensions = { branch = "0.1.1", git = "https://github.com/MyJetTools/rust-extensions.git" }
-my-logger = { branch = "0.2.0", git = "https://github.com/MyJetTools/my-logger.git" }
+my-telemetry = { tag = "0.2.2", git = "https://github.com/MyJetTools/my-telemetry.git" }
+
+my-service-bus-shared = { tag = "0.2.4", git = "https://github.com/MyJetTools/my-service-bus-shared.git" }
+my-service-bus-tcp-client = { tag = "0.1.6", git = "https://github.com/MyJetTools/my-service-bus-tcp-client.git" }
+rust-extensions = { tag = "0.1.2", git = "https://github.com/MyJetTools/rust-extensions.git" }
+
+my-logger = { tag = "0.2.0", git = "https://github.com/MyJetTools/my-logger.git" }
 
 prost = "*"
 prost-types = "*"
