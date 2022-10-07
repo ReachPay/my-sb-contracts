@@ -21,6 +21,8 @@ pub struct OrderExecutionOperation {
     pub from_balance_after_operation: f64,
     #[prost(double, tag = "9")]
     pub to_balance_after_operation: f64,
+    #[prost(double, tag = "10")]
+    pub commission: f64,
 }
 
 impl AsBytes for OrderExecutionOperation {
