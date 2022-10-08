@@ -1,5 +1,3 @@
-use crate::utils::{AsBytes, FromBytes};
-
 pub static CRYPTO_DEPOSIT_COMMAND_TOPIC_NAME: &'static str = "crypto-deposit-command";
 
 #[derive(Clone, Debug, ::prost::Enumeration)]
@@ -9,7 +7,7 @@ pub enum CryptoDepositCommandStatus {
     Completed = 1,
 }
 
-#[derive(PartialEq, ::prost::Message)]
+#[derive(my_service_bus_macros::MySbEntityProtobufModel, Clone, PartialEq, ::prost::Message)]
 pub struct CryptoDepositCommand {
     #[prost(string, tag = "1")]
     pub source_transaction_id: String,
@@ -31,18 +29,4 @@ pub struct CryptoDepositCommand {
     pub deposit_address: String,
     #[prost(string, tag = "10")]
     pub from_address: String,
-}
-
-impl AsBytes for CryptoDepositCommand {
-    fn as_bytes(&self) -> Vec<u8> {
-        let mut result = Vec::new();
-        prost::Message::encode(self, &mut result).unwrap();
-        result
-    }
-}
-
-impl FromBytes for CryptoDepositCommand {
-    fn from_bytes(src: &[u8]) -> Self {
-        prost::Message::decode(src).unwrap()
-    }
 }

@@ -1,8 +1,6 @@
-use crate::utils::AsBytes;
-
 pub static BALANCE_UPDATE_TOPIC_NAME: &'static str = "balance-update";
 
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(my_service_bus_macros::MySbEntityProtobufModel, Clone, PartialEq, ::prost::Message)]
 pub struct BalanceUpdateProtobufModel {
     #[prost(string, tag = "1")]
     pub process_id: String,
@@ -20,22 +18,4 @@ pub struct BalanceUpdate {
     pub wallet: String,
     #[prost(double, tag = "2")]
     pub balance: f64,
-}
-
-impl BalanceUpdateProtobufModel {
-    pub fn as_protobuf_bytes(&self) -> Result<Vec<u8>, prost::EncodeError> {
-        let mut result = Vec::new();
-        prost::Message::encode(self, &mut result)?;
-        Ok(result)
-    }
-
-    pub fn from_protobuf_bytes(bytes: &[u8]) -> Result<Self, prost::DecodeError> {
-        prost::Message::decode(bytes)
-    }
-}
-
-impl AsBytes for BalanceUpdateProtobufModel {
-    fn as_bytes(&self) -> Vec<u8> {
-        self.as_protobuf_bytes().unwrap()
-    }
 }

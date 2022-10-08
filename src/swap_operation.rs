@@ -1,11 +1,8 @@
-use crate::{
-    utils::{AsBytes, FromBytes},
-    BidAskProtobufModel,
-};
+use crate::BidAskProtobufModel;
 
 pub static SWAP_OPERATION_TOPIC_NAME: &'static str = "swap-operation";
 
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(my_service_bus_macros::MySbEntityProtobufModel, Clone, PartialEq, ::prost::Message)]
 pub struct SwapOperation {
     #[prost(sint64, tag = "1")]
     pub created: i64,
@@ -27,18 +24,4 @@ pub struct SwapOperation {
     pub buy_asset_balance: f64,
     #[prost(message, repeated, tag = "10")]
     pub bid_asks: Vec<BidAskProtobufModel>,
-}
-
-impl AsBytes for SwapOperation {
-    fn as_bytes(&self) -> Vec<u8> {
-        let mut result = Vec::new();
-        prost::Message::encode(self, &mut result).unwrap();
-        result
-    }
-}
-
-impl FromBytes for SwapOperation {
-    fn from_bytes(src: &[u8]) -> Self {
-        prost::Message::decode(src).unwrap()
-    }
 }
