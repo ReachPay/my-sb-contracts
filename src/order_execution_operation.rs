@@ -1,5 +1,5 @@
-pub static ORDER_EXECUTION_OPERATION_TOPIC_NAME: &'static str = "order-execution-operation";
-#[derive(my_service_bus_macros::MySbEntityProtobufModel, Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+#[my_service_bus_macros::my_sb_entity_protobuf_model(topic_id = "order-execution-operation")]
 pub struct OrderExecutionOperation {
     #[prost(sint64, tag = "1")]
     pub created: i64,

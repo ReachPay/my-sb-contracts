@@ -1,6 +1,5 @@
-pub static CRYPTO_DEPOSIT_OPERATION_TOPIC_NAME: &'static str = "crypto-deposit-operation";
-
-#[derive(my_service_bus_macros::MySbEntityProtobufModel, Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+#[my_service_bus_macros::my_sb_entity_protobuf_model(topic_id = "crypto-deposit-operation")]
 pub struct CryptoDepositOperation {
     #[prost(sint64, tag = "1")]
     pub created: i64,

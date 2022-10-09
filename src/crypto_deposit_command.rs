@@ -1,5 +1,3 @@
-pub static CRYPTO_DEPOSIT_COMMAND_TOPIC_NAME: &'static str = "crypto-deposit-command";
-
 #[derive(Clone, Debug, ::prost::Enumeration)]
 #[repr(i32)]
 pub enum CryptoDepositCommandStatus {
@@ -7,7 +5,8 @@ pub enum CryptoDepositCommandStatus {
     Completed = 1,
 }
 
-#[derive(my_service_bus_macros::MySbEntityProtobufModel, Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+#[my_service_bus_macros::my_sb_entity_protobuf_model(topic_id = "crypto-deposit-command")]
 pub struct CryptoDepositCommand {
     #[prost(string, tag = "1")]
     pub source_transaction_id: String,

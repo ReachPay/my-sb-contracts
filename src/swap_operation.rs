@@ -1,8 +1,6 @@
 use crate::BidAskProtobufModel;
-
-pub static SWAP_OPERATION_TOPIC_NAME: &'static str = "swap-operation";
-
-#[derive(my_service_bus_macros::MySbEntityProtobufModel, Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+#[my_service_bus_macros::my_sb_entity_protobuf_model(topic_id = "swap-operation")]
 pub struct SwapOperation {
     #[prost(sint64, tag = "1")]
     pub created: i64,

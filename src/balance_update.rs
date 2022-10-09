@@ -1,6 +1,5 @@
-pub static BALANCE_UPDATE_TOPIC_NAME: &'static str = "balance-update";
-
-#[derive(my_service_bus_macros::MySbEntityProtobufModel, Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+#[my_service_bus_macros::my_sb_entity_protobuf_model(topic_id = "balance-update")]
 pub struct BalanceUpdateProtobufModel {
     #[prost(string, tag = "1")]
     pub process_id: String,
