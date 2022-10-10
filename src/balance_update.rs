@@ -5,9 +5,7 @@ pub struct BalanceUpdateProtobufModel {
     pub process_id: String,
     #[prost(sint64, tag = "2")]
     pub timestamp: i64,
-    #[prost(string, tag = "3")]
-    pub client_id: String,
-    #[prost(message, repeated, tag = "4")]
+    #[prost(message, repeated, tag = "3")]
     pub updates: Vec<BalanceUpdate>,
 }
 
@@ -17,4 +15,6 @@ pub struct BalanceUpdate {
     pub wallet: String,
     #[prost(double, tag = "2")]
     pub balance: f64,
+    #[prost(string, tag = "3")]
+    pub client_id: String,
 }
