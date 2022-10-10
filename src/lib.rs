@@ -14,7 +14,7 @@ mod order_execution_operation;
 pub use order_execution_operation::*;
 #[cfg(feature = "crypto-deposit-command")]
 mod crypto_deposit_command;
-pub mod utils;
+
 #[cfg(feature = "crypto-deposit-command")]
 pub use crypto_deposit_command::*;
 
