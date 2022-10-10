@@ -21,4 +21,8 @@ pub struct OrderExecutionOperation {
     pub to_balance_after_operation: f64,
     #[prost(double, tag = "10")]
     pub commission: f64,
+    #[prost(double, tag = "11")]
+    pub is_commission_on_top: bool,
+    #[prost(double, tag = "12")]
+    pub comission_client_id: String,
 }
