@@ -15,11 +15,11 @@ balance-update = []
 order-execution-operation = []
 process-order-command = []
 
+
 [dependencies]
 my-telemetry = { tag = "0.2.2", git = "https://github.com/MyJetTools/my-telemetry.git" }
 
 my-service-bus-abstractions = { tag = "0.1.0", git = "https://github.com/MyJetTools/my-service-bus-abstractions.git" }
-
 
 my-service-bus-macros = { tag = "0.1.0", git = "https://github.com/MyJetTools/my-service-bus-macros.git" }
 

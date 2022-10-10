@@ -1,4 +1,14 @@
 #[derive(Clone, PartialEq, ::prost::Message)]
+pub struct OrderExecutionCommissionGrpcModel {
+    #[prost(double, tag = "1")]
+    pub commission: f64,
+    #[prost(bool, tag = "2")]
+    pub is_commission_on_top: bool,
+    #[prost(string, tag = "3")]
+    pub comission_client_id: String,
+}
+
+#[derive(Clone, PartialEq, ::prost::Message)]
 #[my_service_bus_macros::my_sb_entity_protobuf_model(topic_id = "order-execution-operation")]
 pub struct OrderExecutionOperation {
     #[prost(sint64, tag = "1")]
@@ -19,10 +29,6 @@ pub struct OrderExecutionOperation {
     pub from_balance_after_operation: f64,
     #[prost(double, tag = "9")]
     pub to_balance_after_operation: f64,
-    #[prost(double, tag = "10")]
-    pub commission: f64,
-    #[prost(bool, tag = "11")]
-    pub is_commission_on_top: bool,
-    #[prost(string, tag = "12")]
-    pub comission_client_id: String,
+    #[prost(message, tag = "10")]
+    pub commission: Option<OrderExecutionCommissionGrpcModel>,
 }
