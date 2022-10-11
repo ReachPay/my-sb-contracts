@@ -14,7 +14,7 @@ pub struct CryptoDepositOperation {
     #[prost(string, tag = "2")]
     pub process_id: String,
     #[prost(string, tag = "3")]
-    pub client_id: Option<String>,
+    pub client_id: String,
     #[prost(string, tag = "4")]
     pub merchant_id: Option<String>,
     #[prost(string, tag = "5")]
