@@ -6,6 +6,8 @@ pub struct OrderExecutionCommissionGrpcModel {
     pub is_commission_on_top: bool,
     #[prost(string, tag = "3")]
     pub comission_client_id: String,
+    #[prost(double, tag = "4")]
+    pub balance_after_commission_deposit: f64,
 }
 
 #[derive(Clone, PartialEq, ::prost::Message)]
