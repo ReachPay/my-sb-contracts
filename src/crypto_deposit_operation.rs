@@ -4,6 +4,8 @@ pub struct CryptoDepositCommission {
     pub commission: f64,
     #[prost(string, tag = "2")]
     pub commission_client_id: String,
+    #[prost(double, tag = "3")]
+    pub balance_after_operation: f64,
 }
 
 #[derive(Clone, PartialEq, ::prost::Message)]
