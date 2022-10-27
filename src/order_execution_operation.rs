@@ -1,10 +1,12 @@
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct OrderExecutionStep {
     #[prost(string, tag = "1")]
-    pub client_id: String,
-    #[prost(double, tag = "2")]
-    pub delta: f64,
+    pub from_client_id: String,
+    #[prost(string, tag = "2")]
+    pub to_client_id: String,
     #[prost(double, tag = "3")]
+    pub delta: f64,
+    #[prost(double, tag = "4")]
     pub balance_after_operation: f64,
 }
 
