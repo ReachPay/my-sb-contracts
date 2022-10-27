@@ -38,3 +38,6 @@ jobs:
 
       - name: Build process-order-command       
         run: cargo build --features process-order-command        
+
+      - name: Build withdrawals       
+        run: cargo build --features withdrawals            

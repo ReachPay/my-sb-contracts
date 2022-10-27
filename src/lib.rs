@@ -32,3 +32,13 @@ pub use swap_operation::*;
 mod process_order_command;
 #[cfg(feature = "process-order-command")]
 pub use process_order_command::*;
+
+#[cfg(feature = "withdrawals")]
+mod withdrawals;
+#[cfg(feature = "withdrawals")]
+pub use withdrawals::*;
+
+#[cfg(feature = "withdrawals")]
+mod withdrawals_canceled;
+#[cfg(feature = "withdrawals")]
+pub use withdrawals_canceled::*;
