@@ -15,4 +15,6 @@ pub struct WithdrawalOperation {
     pub balance_after_operation: f64,
     #[prost(string, tag = "7")]
     pub dest: String,
+    #[prost(string, tag = "8")]
+    pub process_id: String,
 }
