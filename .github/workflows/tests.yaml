@@ -1,0 +1,40 @@
+name: Test it
+
+on:
+  push:
+    branches: [ "*" ]
+  pull_request:
+    branches: [ "*" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+
+      - name: Build default
+        run: cargo build
+
+      - name: Build bid-ask         
+        run: cargo build --features bid-ask
+
+      - name: Build crypto-deposit-operation         
+        run: cargo build --features crypto-deposit-operation   
+
+      - name: Build crypto-deposit-command         
+        run: cargo build --features crypto-deposit-command             
+
+      - name: Build swap-operation         
+        run: cargo build --features swap-operation   
+
+      - name: Build balance-update        
+        run: cargo build --features balance-update
+
+      - name: Build order-execution-operation        
+        run: cargo build --features order-execution-operation
+
+      - name: Build process-order-command       
+        run: cargo build --features process-order-command        

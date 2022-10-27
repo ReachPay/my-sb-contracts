@@ -31,9 +31,9 @@ pub struct OrderExecutionOperation {
     pub order_id: String,
     #[prost(string, tag = "4")]
     pub currency: String,
-    #[prost(string, tag = "5")]
+    #[prost(message, tag = "5")]
     pub from: OrderExecutionStep,
-    #[prost(string, tag = "6")]
+    #[prost(message, tag = "6")]
     pub to: OrderExecutionStep,
     #[prost(message, tag = "7")]
     pub commission: Option<OrderExecutionCommissionGrpcModel>,
