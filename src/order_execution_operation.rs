@@ -5,7 +5,7 @@ pub struct OrderExecutionStep {
     #[prost(double, tag = "2")]
     pub delta: f64,
     #[prost(double, tag = "3")]
-    pub balance_after_operatio: f64,
+    pub balance_after_operation: f64,
 }
 
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -31,10 +31,8 @@ pub struct OrderExecutionOperation {
     pub order_id: String,
     #[prost(string, tag = "4")]
     pub currency: String,
-    #[prost(message, tag = "5")]
-    pub from: OrderExecutionStep,
+    #[prost(message, repeated, tag = "5")]
+    pub steps: Vec<OrderExecutionStep>,
     #[prost(message, tag = "6")]
-    pub to: OrderExecutionStep,
-    #[prost(message, tag = "7")]
     pub commission: Option<OrderExecutionCommissionGrpcModel>,
 }
