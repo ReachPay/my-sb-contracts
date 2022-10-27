@@ -34,7 +34,7 @@ jobs:
         run: cargo build --features balance-update
 
       - name: Build order-execution-operation        
-        run: cargo build --features order-execution-operation
+        run: cargo build --features order-execution-operation,bid-ask
 
       - name: Build process-order-command       
         run: cargo build --features process-order-command        
