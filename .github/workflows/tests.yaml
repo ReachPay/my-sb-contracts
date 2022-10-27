@@ -28,13 +28,13 @@ jobs:
         run: cargo build --features crypto-deposit-command             
 
       - name: Build swap-operation         
-        run: cargo build --features swap-operation   
+        run: cargo build --features swap-operation,bid-ask
 
       - name: Build balance-update        
         run: cargo build --features balance-update
 
       - name: Build order-execution-operation        
-        run: cargo build --features order-execution-operation,bid-ask
+        run: cargo build --features order-execution-operation
 
       - name: Build process-order-command       
         run: cargo build --features process-order-command        
