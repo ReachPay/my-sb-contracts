@@ -1,12 +1,10 @@
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct OrderExecutionStep {
     #[prost(string, tag = "1")]
-    pub from_client_id: String,
-    #[prost(string, tag = "2")]
     pub to_client_id: String,
-    #[prost(double, tag = "3")]
+    #[prost(double, tag = "2")]
     pub delta: f64,
-    #[prost(double, tag = "4")]
+    #[prost(double, tag = "3")]
     pub balance_after_operation: f64,
 }
 
@@ -27,14 +25,25 @@ pub struct OrderExecutionCommissionGrpcModel {
 pub struct OrderExecutionOperation {
     #[prost(sint64, tag = "1")]
     pub created: i64,
+
     #[prost(string, tag = "2")]
     pub process_id: String,
+
     #[prost(string, tag = "3")]
     pub order_id: String,
+
     #[prost(string, tag = "4")]
+    pub payer_client_id: String,
+
+    #[prost(double, tag = "5")]
+    pub payer_balance_after_operation: f64,
+
+    #[prost(string, tag = "6")]
     pub currency: String,
-    #[prost(message, repeated, tag = "5")]
+
+    #[prost(message, repeated, tag = "7")]
     pub steps: Vec<OrderExecutionStep>,
-    #[prost(message, tag = "6")]
+
+    #[prost(message, tag = "8")]
     pub commission: Option<OrderExecutionCommissionGrpcModel>,
 }
