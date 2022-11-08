@@ -1,6 +1,6 @@
 #[derive(Clone, PartialEq, ::prost::Message)]
 #[my_service_bus_macros::my_sb_entity_protobuf_model(topic_id = "callback-log")]
-pub struct BidAskProtobufModel {
+pub struct CallbackLogCommand {
     #[prost(int64, tag = "1")]
     pub execute_date: i64,
     #[prost(int32, tag = "2")]
