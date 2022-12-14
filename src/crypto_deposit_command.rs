@@ -28,6 +28,6 @@ pub struct CryptoDepositCommand {
     pub deposit_address: String,
     #[prost(string, tag = "10")]
     pub from_address: String,
-    #[prost(string, tag = "11")]
+    #[prost(message, tag = "11")]
     pub memo: Option<String>,
 }
