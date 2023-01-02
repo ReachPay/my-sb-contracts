@@ -64,7 +64,7 @@ impl OrderExecutionOperation {
             .delta
     }
 
-    pub fn get_comission_amount(&self) -> f64 {
+    pub fn get_commission_amount(&self) -> f64 {
         if let Some(commission) = &self.commission {
             commission.commission
         } else {
@@ -72,7 +72,7 @@ impl OrderExecutionOperation {
         }
     }
 
-    pub fn get_comission_dest_client_id(&self) -> Option<&str> {
+    pub fn get_commission_dest_client_id(&self) -> Option<&str> {
         if let Some(commission) = &self.commission {
             commission.comission_client_id.as_str().into()
         } else {
