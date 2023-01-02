@@ -47,3 +47,20 @@ pub struct OrderExecutionOperation {
     #[prost(message, tag = "8")]
     pub commission: Option<OrderExecutionCommissionGrpcModel>,
 }
+
+impl OrderExecutionOperation {
+    pub fn get_dest_client_id(&self) -> &str {
+        self.steps
+            .get(0)
+            .expect("At least one order execution step must be present")
+            .to_client_id
+            .as_str()
+    }
+
+    pub fn get_order_execution_amount(&self) -> f64 {
+        self.steps
+            .get(0)
+            .expect("At least one order execution step must be present")
+            .delta
+    }
+}
