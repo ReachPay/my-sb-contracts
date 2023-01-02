@@ -63,4 +63,20 @@ impl OrderExecutionOperation {
             .expect("At least one order execution step must be present")
             .delta
     }
+
+    pub fn get_comission_amount(&self) -> f64 {
+        if let Some(commission) = &self.commission {
+            commission.commission
+        } else {
+            0.0
+        }
+    }
+
+    pub fn get_comission_dest_client_id(&self) -> Option<&str> {
+        if let Some(commission) = &self.commission {
+            commission.comission_client_id.as_str().into()
+        } else {
+            None
+        }
+    }
 }
