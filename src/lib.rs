@@ -42,6 +42,10 @@ pub use withdrawals::*;
 mod withdrawals_canceled;
 #[cfg(feature = "withdrawals")]
 pub use withdrawals_canceled::*;
+#[cfg(feature = "withdrawals")]
+mod withdrawals_status_update;
+#[cfg(feature = "withdrawals")]
+pub use withdrawals_status_update::*;
 
 #[cfg(feature = "callback-log")]
 mod callback;
