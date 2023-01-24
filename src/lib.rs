@@ -51,3 +51,8 @@ pub use withdrawals_status_update::*;
 mod callback;
 #[cfg(feature = "callback-log")]
 pub use callback::*;
+
+#[cfg(feature = "fireblocks_rebalance_command")]
+mod fireblocks_rebalance_command;
+#[cfg(feature = "fireblocks_rebalance_command")]
+pub use fireblocks_rebalance_command::*;
