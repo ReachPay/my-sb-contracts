@@ -16,6 +16,7 @@ order-execution-operation = []
 process-order-command = []
 withdrawals = []
 callback-log = []
+fireblocks-rebalance-command = []
 
 
 [dependencies]

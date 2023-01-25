@@ -52,7 +52,7 @@ mod callback;
 #[cfg(feature = "callback-log")]
 pub use callback::*;
 
-#[cfg(feature = "fireblocks_rebalance_command")]
+#[cfg(feature = "fireblocks-rebalance-command")]
 mod fireblocks_rebalance_command;
-#[cfg(feature = "fireblocks_rebalance_command")]
+#[cfg(feature = "fireblocks-rebalance-command")]
 pub use fireblocks_rebalance_command::*;
