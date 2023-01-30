@@ -5,4 +5,6 @@ pub struct FireblocksRebalanceCommand {
     pub asset_id: String,
     #[prost(string, tag = "2")]
     pub vault_id: String,
+    #[prost(double, tag = "3")]
+    pub rebalance_amount: f64,
 }
