@@ -6,7 +6,7 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [features]
-default = []
+default = ["bid-ask"]
 bid-ask = []
 crypto-deposit-operation = []
 crypto-deposit-command = []
@@ -19,11 +19,11 @@ callback-log = []
 
 
 [dependencies]
-my-telemetry = { tag = "0.2.2", git = "https://github.com/MyJetTools/my-telemetry.git" }
+my-telemetry = { tag = "0.3.0", git = "https://github.com/MyJetTools/my-telemetry.git" }
 
 my-service-bus-abstractions = { tag = "0.1.1", git = "https://github.com/MyJetTools/my-service-bus-abstractions.git" }
 
-my-service-bus-macros = { tag = "0.1.0", git = "https://github.com/MyJetTools/my-service-bus-macros.git" }
+my-service-bus-macros = { tag = "0.1.1", git = "https://github.com/MyJetTools/my-service-bus-macros.git" }
 
 rust-extensions = { tag = "0.1.2", git = "https://github.com/MyJetTools/rust-extensions.git" }
 
