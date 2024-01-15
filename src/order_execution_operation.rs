@@ -1,3 +1,6 @@
+use service_sdk::my_service_bus;
+use service_sdk::my_service_bus::macros::my_sb_entity_protobuf_model;
+
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct OrderExecutionStep {
     #[prost(string, tag = "1")]
@@ -21,7 +24,7 @@ pub struct OrderExecutionCommissionGrpcModel {
 }
 
 #[derive(Clone, PartialEq, ::prost::Message)]
-#[my_service_bus_macros::my_sb_entity_protobuf_model(topic_id = "order-execution-operation")]
+#[my_sb_entity_protobuf_model(topic_id = "order-execution-operation")]
 pub struct OrderExecutionOperation {
     #[prost(sint64, tag = "1")]
     pub created: i64,

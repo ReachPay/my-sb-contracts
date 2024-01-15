@@ -1,3 +1,6 @@
+use service_sdk::my_service_bus;
+use service_sdk::my_service_bus::macros::my_sb_entity_protobuf_model;
+
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct CryptoDepositCommission {
     #[prost(double, tag = "1")]
@@ -9,7 +12,7 @@ pub struct CryptoDepositCommission {
 }
 
 #[derive(Clone, PartialEq, ::prost::Message)]
-#[my_service_bus_macros::my_sb_entity_protobuf_model(topic_id = "crypto-deposit-operation")]
+#[my_sb_entity_protobuf_model(topic_id = "crypto-deposit-operation")]
 pub struct CryptoDepositOperation {
     #[prost(sint64, tag = "1")]
     pub created: i64,

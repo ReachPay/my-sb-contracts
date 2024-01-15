@@ -1,5 +1,8 @@
+use service_sdk::my_service_bus;
+use service_sdk::my_service_bus::macros::my_sb_entity_protobuf_model;
+
 #[derive(Clone, PartialEq, ::prost::Message)]
-#[my_service_bus_macros::my_sb_entity_protobuf_model(topic_id = "withdrawals-canceled")]
+#[my_sb_entity_protobuf_model(topic_id = "withdrawals-canceled")]
 pub struct WithdrawalCanceledOperation {
     #[prost(sint64, tag = "1")]
     pub happened: i64,
