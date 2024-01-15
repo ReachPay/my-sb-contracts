@@ -20,16 +20,12 @@ fireblocks-rebalance-command = []
 
 
 [dependencies]
-my-telemetry = { tag = "0.3.0", git = "https://github.com/MyJetTools/my-telemetry.git" }
+service-sdk = { tag = "0.2.5", git = "https://github.com/MyJetTools/service-sdk.git", features = [
+    "my-service-bus",
+    "macros",
+] }
 
-my-service-bus-abstractions = { tag = "0.1.1", git = "https://github.com/MyJetTools/my-service-bus-abstractions.git" }
-
-my-service-bus-macros = { tag = "0.1.1", git = "https://github.com/MyJetTools/my-service-bus-macros.git" }
-
-rust-extensions = { tag = "0.1.2", git = "https://github.com/MyJetTools/rust-extensions.git" }
-
-my-logger = { tag = "0.2.0", git = "https://github.com/MyJetTools/my-logger.git" }
+serde = { version = "*", features = ["derive"] }
 
 prost = "*"
 prost-types = "*"
-tokio = { version = "*", features = ["full"] }
