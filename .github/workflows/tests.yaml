@@ -16,7 +16,7 @@ jobs:
           toolchain: stable
 
       - name: Build default
-        run: cargo build
+        run: cargo build --all-features
 
       - name: Build bid-ask         
         run: cargo build --features bid-ask
